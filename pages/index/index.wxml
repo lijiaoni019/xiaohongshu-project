@@ -1,13 +1,11 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<view class="binner"></view>
+
+<view class = "container">
+  <view data-id="{{item.id}}" bindtap="navigateToShowPage" class="card-product" wx:for ="{{bars}}">
+    <image mode="aspectFill" src="{{item.image.path}}" />
+    <view class="card-product-infos">
+    <view ><h2>{{item.name}}</h2></view>
+    <view><p>{{item.title}}</p></view>
+    </view>
   </view>
 </view>
