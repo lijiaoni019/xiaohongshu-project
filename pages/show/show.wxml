@@ -18,5 +18,15 @@
     <view class="title">{{bar.title}}</view>
     <view class="text">{{bar.text}}</view>
   </view>
-  <view class="comments"></view>
+  <view class="comments">
+    <view class="header">Comments</view>
+    <view wx:for="{{comments}}" wx:key="id" class="body">{{item.body}}</view>
+    <form bindsubmit="createComment">
+      <view>
+        <textarea name='body' placeholder="Write comment"></textarea>
+        <button form-type="submit">Submit</button>
+        <button form-type="reset">Reset</button>
+      </view>
+    </form>
+  </view>
 </view>
