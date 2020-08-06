@@ -1,0 +1,11 @@
+<block wx:if="{{currentUser}}">
+<button bindtap="userLogout" style="margin: 16rpx auto; background-color: #07C160" type="primary" >Log Out</button>
+</block>
+
+<block wx:else>
+<view style="display: flex;  flex-direction: column; margin-bottom: 40px; padding-top: 100px ; align-items: center; background: white;box-shadow: 0 0 16px rgba(0,0,0,0.1);">
+<image style = " border-radius:50%; height:200rpx; width:200rpx;" src="https://cloud-minapp-36449.cloud.ifanrusercontent.com/1k1MAKa16rZgvAXO.jpg" />
+<view style="margin: 16px 0">用户登录</view>
+</view>
+<button open-type="getUserInfo" bindgetuserinfo="userLogin" style="margin: 16rpx auto; background-color: #07C160" type="primary" >LOG IN</button> 
+</block>
