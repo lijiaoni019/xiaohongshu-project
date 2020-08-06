@@ -70,6 +70,12 @@
 					"pathName": "pages/show/show",
 					"query": "id=5f295aafe782d92e9c1d6974",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "post",
+					"pathName": "pages/post/post",
+					"scene": null
 				}
 			]
 		}

@@ -1,3 +1,15 @@
+<page-meta>
+  <navigation-bar
+    title="{{nbTitle}}"
+    loading="{{nbLoading}}"
+    front-color="{{nbFrontColor}}"
+    background-color="{{nbBackgroundColor}}"
+    color-animation-duration="2000"
+    color-animation-timing-func="easeIn"
+    
+  />
+</page-meta>
+
 <view class="container">
   <image class="bar-amge" src="{{bar.image.path}}"></image>
   <view class="bar-name">{{bar.name}}</view>
