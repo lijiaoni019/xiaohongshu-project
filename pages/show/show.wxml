@@ -10,8 +10,9 @@
   />
 </page-meta>
 
-<view wx:for="{{cupcake}}" class="container">
-  <image class="cupcake-image" src="{{cupcake.image.path}}"></image>
-  <view class="cupcake-name">{{cupcake.name}}</view>
-  <view class="description">{{cupcake.text}}</view>
+<view class="background"></view>
+<image class="image" src="{{cupcake.image.path}}"></image>
+<view class="container">
+  <view class="header">{{cupcake.name}}</view>
+  <view class="description">{{cupcake.description}}</view>
 </view>

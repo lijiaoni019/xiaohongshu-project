@@ -1,1 +1,25 @@
-/* pages/show/show.wxss */
+page {
+  background-color: black;
+}
+
+.image {
+  width: 100%;
+  object-fit: cover;
+  box-shadow: 4rpx 8rpx rgba(0, 0, 0, 0.1) ;
+}
+.container {
+  padding: 0 48rpx;
+}
+
+
+.container .header {
+  font-size: 56rpx;
+  font-weight: bolder;
+  color: white;
+  margin: 16rpx 0;
+  
+}
+
+.container .description {
+  color: white;
+}
