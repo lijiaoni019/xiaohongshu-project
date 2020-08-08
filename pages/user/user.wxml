@@ -1,5 +1,86 @@
+<block wx:if="{{user}}">
 <block wx:if="{{currentUser}}">
-<button bindtap="userLogout" style="margin: 16rpx auto; background-color: #07C160" type="primary" >Log Out</button>
+  <view class ="flex-display">
+  <image src="{{currentUser.avatar}}" />
+  <view style="color: white">{{currentUser.nickname}}</view>
+  </view> 
+
+
+<view style ="display: flex;flex-direction: column;  align-items: center;">
+  <view  style="display:flex; margin:8px">
+  <view wx:if ="{{check==1}}" bindtap="checkMyPost" style="margin-right:8px; font-weight:bolder">Posts</view>
+  <view wx:else bindtap="checkMyPost" style="margin-right:8px; color:grey; font-weight:lighter">Posts</view>
+  <view  wx:if ="{{check==2}}" bindtap="checkMyComments" style="margin-right:8px;font-weight:bolder">Comments</view>
+  <view wx:else bindtap="checkMyComments" style="margin-right:8px;color:grey; font-weight:lighter">Comments</view>
+  <view  wx:if ="{{check==3}}" bindtap="checkMyFavorites" style="font-weight:bolder">Favorites</view>
+  <view wx:else bindtap="checkMyFavorites" style="color:grey; font-weight:lighter">Favorites</view>
+  </view>
+  </view>
+
+ <block  wx:if = "{{check==1}}">
+  <view class = "container">
+    <view class="card-product" wx:for ="{{bar}}">
+      <image data-id="{{item.id}}"  bindtap="navigateToShowPage" mode="aspectFill" src="{{item.image.path}}" />
+
+      <view data-id="{{item.id}}"  bindtap="navigateToShowPage" class="card-product-infos">
+        <view><h2>{{item.name}}</h2></view>
+        <view><p>{{item.title}}</p></view>
+      </view>
+
+      <view style="display:flex; justify-content:space-between; align-items:flex-end; padding:0 8px; margin-top: 8px">
+        <view style ="display: flex; align-items:flex-end;">
+          <image src="{{item.user_id.avatar}}" style="border-radius: 50%;height: 48rpx;width: 48rpx;" />
+          <view style = "font-size: 10px; font-weight:lighter; margin-left: 2px">{{item.user_id.nickname}}</view>
+        </view>
+
+        <view bindtap = "countLike"  data-id="{{item.id}}" data-favorite="{{item.favorite}}"data-like="{{item.like}}" style ="display: flex; align-items: center;">
+          <view style = "font-size: 10px; font-weight:lighter; margin-right: 2px">{{item.like}}</view>
+          <view style = "color:#BF0917">❤</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:if = "{{check==2}}">
+<view style=" background:#f3f3f3; padding:4px 0">
+  <view data-id="{{item.id}}" bindtap="navigateToRestaurant" class="card-trip" wx:for = "{{comment}}">
+  <image mode="aspectFill" src="{{item.bar_id.image.path}}" />
+  <view class="card-trip-infos">
+    <view><h2>{{item.bar_id.name}}</h2></view>
+    <view><p> My comment: {{item.body}}</p></view>
+  </view>
+  </view>
+</view>
+</block>
+
+<block wx:if = "{{check==3}}">
+<view class = "container">
+    <view class="card-product" wx:for ="{{favorites}}">
+      <image data-id="{{item.id}}"  bindtap="navigateToShowPage" mode="aspectFill" src="{{item.image.path}}" />
+
+      <view data-id="{{item.id}}"  bindtap="navigateToShowPage" class="card-product-infos">
+        <view><h2>{{item.name}}</h2></view>
+        <view><p>{{item.title}}</p></view>
+      </view>
+
+      <view style="display:flex; justify-content:space-between; align-items:flex-end; padding:0 8px; margin-top: 8px">
+        <view style ="display: flex; align-items:flex-end;">
+          <image src="{{item.user_id.avatar}}" style="border-radius: 50%;height: 48rpx;width: 48rpx;" />
+          <view style = "font-size: 10px; font-weight:lighter; margin-left: 2px">{{item.user_id.nickname}}</view>
+        </view>
+
+        <view bindtap = "countLike"  data-id="{{item.id}}" data-favorite="{{item.favorite}}"data-like="{{item.like}}" style ="display: flex; align-items: center;">
+          <view style = "font-size: 10px; font-weight:lighter; margin-right: 2px">{{item.like}}</view>
+          <view style = "color:#BF0917">❤</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  </block>
+
+
+  <button bindtap="userLogout" style="margin: 16rpx auto; background-color: #07C160" type="primary" >Log Out</button>
 </block>
 
 <block wx:else>
@@ -8,4 +89,5 @@
 <view style="margin: 16px 0">用户登录</view>
 </view>
 <button open-type="getUserInfo" bindgetuserinfo="userLogin" style="margin: 16rpx auto; background-color: #07C160" type="primary" >LOG IN</button> 
+</block>
 </block>
