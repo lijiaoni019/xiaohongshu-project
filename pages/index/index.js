@@ -70,6 +70,10 @@ Page({
     })
 
   },
+
+  onShow: function(){
+    this.getDataFromBaasPost()
+  },
   
   onLoad: function () {
     this.getDataFromBaasPost()
