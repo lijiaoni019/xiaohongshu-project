@@ -15,4 +15,6 @@
 <view class="container">
   <view class="header">{{cupcake.name}}</view>
   <view class="description">{{cupcake.description}}</view>
+  <view class="subheader">What's the Story?</view>
+  <view class="text">{{cupcake.text}}</view>
 </view>
