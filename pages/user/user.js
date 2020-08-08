@@ -11,9 +11,9 @@ Page({
     if (currentUser){
       this.setData({currentUser})
       this.setData({user:true})
+      this.fetchFavorites()
     }else {
       this.setData({user:true})
-
     }
 
 
@@ -91,7 +91,6 @@ Page({
   onLoad: function (options) {
     this.checkCurrentUser()
     this.fetchPost()
-    this.fetchFavorites()
   },
 
 
