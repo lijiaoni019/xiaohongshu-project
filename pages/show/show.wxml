@@ -10,23 +10,27 @@
   />
 </page-meta>
 
-<view class="container">
-  <image class="bar-amge" src="{{bar.image.path}}"></image>
-  <view class="bar-name">{{bar.name}}</view>
-  <view class="address">{{bar.address}}</view>
-  <view class="review">
-    <view class="title">{{bar.title}}</view>
-    <view class="text">{{bar.text}}</view>
-  </view>
-  <view class="comments">
-    <view class="header">Comments</view>
-    <view wx:for="{{comments}}" wx:key="id" class="body">{{item.body}}</view>
-    <form bindsubmit="createComment">
-      <view>
-        <textarea name='body' placeholder="Write comment"></textarea>
-        <button form-type="submit">Submit</button>
-        <button form-type="reset">Reset</button>
+<view class="background"></view>
+<image class="image" src="{{cupcake.image.path}}"></image>
+
+    <view style="display:flex; justify-content:space-between; align-items:flex-end; padding:0 8px; margin-top: 8px">
+      <view style ="display: flex; align-items:flex-end;">
+        <image src="{{item.user_id.avatar}}" style="border-radius: 50%;height: 48rpx;width: 48rpx;" />
+        <view style = "font-size: 10px; font-weight:lighter; margin-left: 2px">{{item.user_id.nickname}}</view>
       </view>
-    </form>
-  </view>
+
+      <view bindtap = "countLike" style ="display: flex; align-items: center;">
+        <view style = "font-size: 24px; color: white; font-weight:lighter; margin-right: 2px">{{currentLike}}</view>
+        <view wx:if="{{favorite}}" style = "font-size: 32px; color:#BF0917">❤</view>
+        <view wx:else style = "color:#E4E3E3; font-size: 32px;">❤</view> 
+      </view>
+    </view>
+
+<view class="container">
+  <view class="header">{{cupcake.name}}</view>
+  <view class="description">{{cupcake.description}}</view>
+  <view class="subheader">What's the Story?</view>
+  <view class="text">{{cupcake.text}}</view>
 </view>
+
+
