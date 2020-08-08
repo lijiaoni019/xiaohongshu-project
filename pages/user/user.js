@@ -55,10 +55,10 @@ Page({
   },
 
   fetchFavorites: function () {
-    let Post = new wx.BaaS.TableObject("bar");
+    let Post = new wx.BaaS.TableObject("cupcake");
     let query = new wx.BaaS.Query()
     query.compare('favorite', '=', true)
-    Post.setQuery(query).expand(['user_id']).orderBy(['-created_at']).find().then(res => {
+    Post.setQuery(query).orderBy(['-created_at']).find().then(res => {
       console.log(res)
       let favorites = res.data.objects
       this.setData({favorites})

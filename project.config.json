@@ -66,13 +66,6 @@
 			"list": [
 				{
 					"id": -1,
-					"name": "Show",
-					"pathName": "pages/show/show",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "show",
 					"pathName": "pages/show/show",
 					"query": "id=5f295aafe782d92e9c1d6974",
