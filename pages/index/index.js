@@ -8,7 +8,7 @@ Page({
   getDataFromBaasPost: function () {
     let Cupcake = new wx.BaaS.TableObject("cupcake")
     let query = new wx.BaaS.Query()
-    Cupcake.setQuery(query).expand(['user_id']).orderBy(['-created_at']).find().then (res => {
+    Cupcake.setQuery(query).limit(100).expand(['user_id']).orderBy(['-created_at']).find().then (res => {
       console.log(res)
       let cupcake = res.data.objects
       this.setData({cupcake})
