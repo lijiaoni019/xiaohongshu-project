@@ -34,4 +34,5 @@ page {
 
 .container .text {
   color: white;
+  margin-bottom: 16rpx;
 }
