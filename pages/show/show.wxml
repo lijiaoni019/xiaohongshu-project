@@ -10,23 +10,8 @@
   />
 </page-meta>
 
-<view class="container">
-  <image class="bar-amge" src="{{bar.image.path}}"></image>
-  <view class="bar-name">{{bar.name}}</view>
-  <view class="address">{{bar.address}}</view>
-  <view class="review">
-    <view class="title">{{bar.title}}</view>
-    <view class="text">{{bar.text}}</view>
-  </view>
-  <view class="comments">
-    <view class="header">Comments</view>
-    <view wx:for="{{comments}}" wx:key="id" class="body">{{item.body}}</view>
-    <form bindsubmit="createComment">
-      <view>
-        <textarea name='body' placeholder="Write comment"></textarea>
-        <button form-type="submit">Submit</button>
-        <button form-type="reset">Reset</button>
-      </view>
-    </form>
-  </view>
+<view wx:for="{{cupcake}}" class="container">
+  <image class="cupcake-image" src="{{cupcake.image.path}}"></image>
+  <view class="cupcake-name">{{cupcake.name}}</view>
+  <view class="description">{{cupcake.text}}</view>
 </view>
