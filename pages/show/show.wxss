@@ -23,3 +23,15 @@ page {
 .container .description {
   color: white;
 }
+
+.container .subheader {
+  color: white;
+  font-weight: bolder;
+  margin-top: 64rpx;
+  margin-bottom: 16rpx;
+  font-size: 40rpx;
+}
+
+.container .text {
+  color: white;
+}
