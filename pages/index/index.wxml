@@ -3,7 +3,7 @@
 </view>
 
 <view class = "container">
-  <view class="card-product" wx:for ="{{bars}}">
+  <view class="card-product" wx:for ="{{cupcake}}">
     <image data-id="{{item.id}}"  bindtap="navigateToShowPage" mode="aspectFill" src="{{item.image.path}}" />
 
     <view data-id="{{item.id}}"  bindtap="navigateToShowPage" class="card-product-infos">
@@ -26,6 +26,3 @@
   </view>
 </view>
 
-<view bindtap="navigateToPostPage" style="display: flex; border-radius: 8px; place-items: center; font-size:56px; background-color:#CC2536; color: white; width: 40px; height: 48px; position:sticky; bottom:-4px; left: 166px;">
-<text>+</text>
-</view>

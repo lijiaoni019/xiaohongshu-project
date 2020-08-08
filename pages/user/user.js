@@ -43,10 +43,9 @@ Page({
 
   fetchPost: function () {
     let id = this.data.currentUser.id
-    let Post = new wx.BaaS.TableObject("bar");
+    let Post = new wx.BaaS.TableObject("cupcake");
     let query = new wx.BaaS.Query()
-    query.compare('user_id', '=', id)
-    Post.setQuery(query).orderBy(['-created_at']).find().then(res => {
+    Post.setQuery(query).orderBy(['-like']).limit(4).find().then(res => {
       console.log(res)
       let bar = res.data.objects
       this.setData({bar})
@@ -65,20 +64,6 @@ Page({
       this.setData({favorites})
       console.log(this.data)
     })
-  },
-
-  fetchComment: function () {
-    let id = this.data.currentUser.id
-    let Comment = new wx.BaaS.TableObject("comments2");
-    let query = new wx.BaaS.Query()
-    query.compare('user_id', '=', id)
-    Comment.setQuery(query).expand(['bar_id']).orderBy(['-created_at']).find().then(res => {
-      console.log(res)
-      let comment = res.data.objects
-      this.setData({comment})
-      console.log(this.data)
-    })
-
   },
 
   navigateToShowPage:function(e){
@@ -105,7 +90,6 @@ Page({
 
   onLoad: function (options) {
     this.checkCurrentUser()
-    this.fetchComment()
     this.fetchPost()
     this.fetchFavorites()
   },

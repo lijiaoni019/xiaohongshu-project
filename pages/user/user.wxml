@@ -8,10 +8,8 @@
 
 <view style ="display: flex;flex-direction: column;  align-items: center;">
   <view  style="display:flex; margin:8px">
-  <view wx:if ="{{check==1}}" bindtap="checkMyPost" style="margin-right:8px; font-weight:bolder">Posts</view>
+  <view wx:if ="{{check==1}}" bindtap="checkMyPost" style="margin-right:8px; font-weight:bolder">Popular</view>
   <view wx:else bindtap="checkMyPost" style="margin-right:8px; color:grey; font-weight:lighter">Posts</view>
-  <view  wx:if ="{{check==2}}" bindtap="checkMyComments" style="margin-right:8px;font-weight:bolder">Comments</view>
-  <view wx:else bindtap="checkMyComments" style="margin-right:8px;color:grey; font-weight:lighter">Comments</view>
   <view  wx:if ="{{check==3}}" bindtap="checkMyFavorites" style="font-weight:bolder">Favorites</view>
   <view wx:else bindtap="checkMyFavorites" style="color:grey; font-weight:lighter">Favorites</view>
   </view>
