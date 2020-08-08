@@ -8,7 +8,7 @@ Page({
   getDataFromBaasPost: function () {
     let Bars = new wx.BaaS.TableObject("bar")
     let query = new wx.BaaS.Query()
-    Bars.setQuery(query).orderBy('created_at').find().then (res => {
+    Bars.setQuery(query).expand(['user_id']).orderBy(['-created_at']).find().then (res => {
       console.log(res)
       let bars = res.data.objects
       this.setData({bars})

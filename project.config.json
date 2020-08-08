@@ -80,14 +80,16 @@
 				},
 				{
 					"id": -1,
-<<<<<<< Updated upstream
 					"name": "post",
 					"pathName": "pages/post/post",
-=======
-					"name": "Index",
-					"pathName": "pages/index/index",
 					"query": "",
->>>>>>> Stashed changes
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/user/user",
+					"query": "",
 					"scene": null
 				}
 			]
